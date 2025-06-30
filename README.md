@@ -1,6 +1,5 @@
 # Projeto Modulo II - Capacita
 
----
 
 Desenvolver uma aplicação front end.
 
