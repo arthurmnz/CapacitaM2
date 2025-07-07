@@ -1,15 +1,12 @@
 import "./Edit.css"
 import React, { useState } from "react";
-import { registerProduct } from "../services/mockapi.js";
+import { updateProduct, getProductById } from "../services/mockapi.js";
 
-function Cadastro() {
-  const [product, setProduct] = useState({
-    Name: "",
-    Price: "",
-    Categories: "",
-    Description: "",
-    Storage: "",
-  });
+function Editar() {
+    
+    const id = URLSearchParams
+    const productData = getProductById(id);
+    const [product, setProduct] = useState(productData);
 
   const validateProduct = (product) => {
     if (
@@ -63,7 +60,10 @@ function Cadastro() {
   };
 
   return (
+
+    
     <form onSubmit={(e) => e.preventDefault()}>
+      
       <label>Nome do Produto:</label><br />
       <input
         id="Name"
@@ -107,12 +107,12 @@ function Cadastro() {
         value={product.Storage}
         onChange={handleChange}
         placeholder="Digite a quantidade no estoque..."
-      /> <br />
+      /> <br /> <br />
       <button onClick={handleSubmit} type="submit">
-        Cadastrar Produto
-      </button><br /><br />
+        Salvar mudança
+      </button>
     </form>
   );
 }
 
-export default Cadastro;
+export default Editar;
