@@ -1,10 +1,13 @@
 import React from "react";
+import Footer from "./Footer";
+import Edit from "./Edit"
 
 const TelaEdicao = () => {
     return(
 
     <div>
-        <h2>editar Produtos</h2>
+        <Edit/>
+        
     </div>
 
     );

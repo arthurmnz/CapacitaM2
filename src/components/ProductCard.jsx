@@ -3,15 +3,18 @@ import { Card, CardMedia, CardContent, Typography, IconButton, Chip, Box } from 
 import { Edit, Delete } from '@mui/icons-material';
 
 
-const ProductCard = () => {
+
+  const ProductCard = (Product) => {
   const product = {
-    name: 'Fone Rosa Da Hello Kitty',
-    brand: 'VAZIO',
-    category: 'Headphones',
-    price: 999.99,
-    stock: 10,
-    image: 'https://lojadasvariedades.cdn.magazord.com.br/img/2024/06/produto/35777/54-1.jpg?ims=fit-in/635x865/filters:fill(white)', // Substitua pela URL da sua imagem
+    Name: "product.Name",
+    Price: "product.Price",
+    Categories: "product.Categories",
+    Description: "product.Description",
+    Storage: "product.Storage",
+    ImgUrl: "product.ImgUrl",
   };
+
+
 
   return (
     <Card sx={{ width: 300, borderRadius: 3, boxShadow: 3 }}>

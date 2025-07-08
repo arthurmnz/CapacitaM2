@@ -1,4 +1,4 @@
-const API_URL = "https://6862c40396f0cc4e34bae5ce.mockapi.io/api/Product";
+const API_URL = "https://6864689c5b5d8d03397d2526.mockapi.io/Product";
 
 //GET /Products
 //get all products
