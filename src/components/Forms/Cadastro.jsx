@@ -123,12 +123,12 @@ function Cadastro() {
           type="text"
           value={product.ImgUrl}
           onChange={handleChange}
-          placeholder="Digite o nome do produto..."
+          placeholder="Digite a Url da imagem do produto..."
         />
-        <button className="submit-button" onClick={handleSubmit} type="submit">
-          Cadastrar Produto
-        </button>
       </div>
+      <button className="submit-button" onClick={handleSubmit} type="submit">
+        Cadastrar Produto
+      </button>
     </form>
   );
 }

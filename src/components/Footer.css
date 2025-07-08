@@ -24,7 +24,6 @@ margin: 0 auto;
 @media (max-width: 768px) {
   .footer {
     padding: 15px 0;
-
   }
   .footer p{
     font-size: 0.9rem;

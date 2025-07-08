@@ -84,63 +84,67 @@ function Editar() {
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <label>Nome do Produto:</label>
-      <input
-        className="input-field"
-        id="Name"
-        type="text"
-        value={product.Name}
-        onChange={handleChange}
-        placeholder="Digite o nome do produto..."
-      />
-      <label>Preço do Produto:</label>
-      <input
-        className="input-field"
-        id="Price"
-        type="number"
-        step="0.01"
-        value={product.Price}
-        onChange={handleChange}
-        placeholder="Digite o Preço do produto..."
-      />
-      <label>Categorias do Produto:</label>
-      <input
-        className="input-field"
-        id="Categories"
-        type="text"
-        value={product.Categories}
-        onChange={handleChange}
-        placeholder="Digite as categorias do produto..."
-      />
-      <label>Descrição do Produto:</label>
-      <input
-        className="input-field"
-        id="Description"
-        type="text"
-        value={product.Description}
-        onChange={handleChange}
-        placeholder="Digite a descrição do produto..."
-      />
-      <label>Quantidade no estoque:</label>
-      <input
-        className="input-field"
-        id="Storage"
-        type="number"
-        value={product.Storage}
-        onChange={handleChange}
-        placeholder="Digite a quantidade no estoque..."
-      />
-      <label>Url da imagem:</label>
-      <input
-        className="input-field"
-        id="ImgUrl"
-        type="text"
-        value={product.ImgUrl}
-        onChange={handleChange}
-        placeholder="Digite o nome do produto..."
-      />
+      <div className="form-left">
+        <label>Nome do Produto:</label>
+        <input
+          className="input-field"
+          id="Name"
+          type="text"
+          value={product.Name}
+          onChange={handleChange}
+          placeholder="Digite o nome do produto..."
+        />
+        <label>Preço do Produto:</label>
+        <input
+          className="input-field"
+          id="Price"
+          type="number"
+          step="0.01"
+          value={product.Price}
+          onChange={handleChange}
+          placeholder="Digite o Preço do produto..."
+        />
+        <label>Categorias do Produto:</label>
+        <input
+          className="input-field"
+          id="Categories"
+          type="text"
+          value={product.Categories}
+          onChange={handleChange}
+          placeholder="Digite as categorias do produto..."
+        />
+        <label>Descrição do Produto:</label>
+        <input
+          className="input-field"
+          id="Description"
+          type="text"
+          value={product.Description}
+          onChange={handleChange}
+          placeholder="Digite a descrição do produto..."
+        />
+        <label>Quantidade no estoque:</label>
+        <input
+          className="input-field"
+          id="Storage"
+          type="number"
+          value={product.Storage}
+          onChange={handleChange}
+          placeholder="Digite a quantidade no estoque..."
+        />
+      </div>
+      <div className="form-right">
+        <label>Url da imagem:</label>
+        <input
+          className="input-field"
+          id="ImgUrl"
+          type="text"
+          value={product.ImgUrl}
+          onChange={handleChange}
+          placeholder="Digite a Url da imagem do produto..."
+        />
+      </div>
       <button className="submit-button" onClick={handleSubmit} type="submit">
-        Salvar mudança
+        Cadastrar Produto
       </button>
     </form>
   );
