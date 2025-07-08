@@ -1,9 +1,13 @@
 import "./App.css";
-import Footer from './components/Footer';
+import ProductCard from './components/ProductCard.jsx'
+
 
 function App() {
-  return <></>;
-
+  return (
+    <div style={{ padding: 20 }}>
+      <ProductCard />
+    </div>
+  );
 }
 
 export default App;
