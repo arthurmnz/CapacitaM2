@@ -1,4 +1,4 @@
-import "./Edit.css"
+import "./Forms.css"
 import React, { useState } from "react";
 import { registerProduct } from "../services/mockapi.js";
 

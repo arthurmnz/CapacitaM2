@@ -1,12 +1,12 @@
-import "./Edit.css"
+import "./Forms.css";
 import React, { useState } from "react";
 import { updateProduct, getProductById } from "../services/mockapi.js";
 
 function Editar() {
-    
-    const id = URLSearchParams
-    const productData = getProductById(id);
-    const [product, setProduct] = useState(productData);
+  // ajudar hj const id = URLSearchParams(window.location.search).get("id");
+  const id = 2;
+  const productData = getProductById(id);
+  const [product, setProduct] = useState(productData);
 
   const validateProduct = (product) => {
     if (
@@ -41,7 +41,7 @@ function Editar() {
       };
 
       try {
-        await registerProduct(productToSend);
+        await updateProduct(productToSend);
         console.log("Produto cadastrado com sucesso!");
       } catch {
         console.log("Erro ao cadastrar produto");
@@ -60,54 +60,57 @@ function Editar() {
   };
 
   return (
-
-    
     <form onSubmit={(e) => e.preventDefault()}>
-      
-      <label>Nome do Produto:</label><br />
+      <label>Nome do Produto:</label>
+      <br />
       <input
         id="Name"
         type="text"
         value={product.Name}
         onChange={handleChange}
         placeholder="Digite o nome do produto..."
-      /> <br />
-
-      <label>Preço do Produto:</label><br />
+      />{" "}
+      <br />
+      <label>Preço do Produto:</label>
+      <br />
       <input
         id="Price"
         type="number"
         value={product.Price}
         onChange={handleChange}
         placeholder="Digite o Preço do produto..."
-      /> <br />
-
-      <label>Categorias do Produto:</label><br />
+      />{" "}
+      <br />
+      <label>Categorias do Produto:</label>
+      <br />
       <input
         id="Categories"
         type="text"
         value={product.Categories}
         onChange={handleChange}
         placeholder="Digite as categorias do produto..."
-      /> <br />
-
-      <label>Descrição do Produto:</label><br />
+      />{" "}
+      <br />
+      <label>Descrição do Produto:</label>
+      <br />
       <input
         id="Description"
         type="text"
         value={product.Description}
         onChange={handleChange}
         placeholder="Digite a descrição do produto..."
-      /> <br />
-
-      <label>Quantidade no estoque:</label><br />
+      />{" "}
+      <br />
+      <label>Quantidade no estoque:</label>
+      <br />
       <input
         id="Storage"
         type="number"
         value={product.Storage}
         onChange={handleChange}
         placeholder="Digite a quantidade no estoque..."
-      /> <br /> <br />
+      />{" "}
+      <br /> <br />
       <button onClick={handleSubmit} type="submit">
         Salvar mudança
       </button>
