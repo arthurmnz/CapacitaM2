@@ -2,7 +2,7 @@ const API_URL = "https://6862c40396f0cc4e34bae5ce.mockapi.io/api/Products";
 
 //GET /Products
 //get all products
-export async function getProducts() {
+export async function getAllProducts() {
   const response = await fetch(API_URL);
   if (!response.ok) {
     throw new Error("Resposta interna não obteve sucesso");
@@ -15,7 +15,7 @@ export async function getProducts() {
     Categories: product.Categories,
     Description: product.Description,
     Storage: product.Storage,
-    ImgUrl: product.ImgUrl, // Ensure ImgUrl is included, defaulting to empty string if not present
+    ImgUrl: product.ImgUrl,
   }));
 }
 
@@ -53,6 +53,7 @@ export async function registerProduct(product) {
       Categories: product.Categories,
       Description: product.Description,
       Storage: product.Storage,
+      ImgUrl: product.ImgUrl,
     }),
   });
   if (!response.ok) {
@@ -66,6 +67,7 @@ export async function registerProduct(product) {
     Categories: data.Categories,
     Description: data.Description,
     Storage: data.Storage,
+    ImgUrl: data.ImgUrl,
   };
 }
 
@@ -84,6 +86,7 @@ export async function updateProduct(id, product) {
       Categories: product.Categories,
       Description: product.Description,
       Storage: product.Storage,
+      ImgUrl: product.ImgUrl,
     }),
   });
   if (!response.ok) {
@@ -97,6 +100,7 @@ export async function updateProduct(id, product) {
     Categories: data.Categories,
     Description: data.Description,
     Storage: data.Storage,
+    ImgUrl: data.ImgUrl,
   };
 }
 

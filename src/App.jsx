@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import TelaCadastro from "./components/TelaCadastro";
@@ -26,7 +26,8 @@ function App() {
             <a href="/TelaEdicao">Edição de produtos</a>
             </div>
           </nav>
-          <br /><br />
+          <br />
+          <br />
         </div>
         <Routes>
           <Route path="/" element= { <Home/> } />
@@ -34,7 +35,6 @@ function App() {
           <Route path="/TelaEdicao" element= { <TelaEdicao/>  } />
           <Route path="/TelaEdicao/:id" element= { <TelaEdicao/>  } />
           <Route path='*' element={ <NoPage/> } />
-
         </Routes>
       </BrowserRouter>
     </>
