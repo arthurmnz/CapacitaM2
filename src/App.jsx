@@ -8,8 +8,8 @@ import Typography from "@mui/material/Typography";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-import TelaCadastro from "./components/TelaCadastro";
-import TelaEdicao from "./components/TelaEdicao";
+import TelaCadastro from "./pages/TelaCadastro";
+import TelaEdicao from "./pages/TelaEdicao";
 import { Login } from "@mui/icons-material";
 import "./components/Header.css";
 import NoPage from "./components/NoPage"
