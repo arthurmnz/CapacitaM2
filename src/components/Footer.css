@@ -1,0 +1,35 @@
+.footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.footer .container {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+
+.footer p {
+  margin: 5px 0;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 0;
+
+  }
+  .footer p{
+    font-size: 0.9rem;
+  }
+
+
+
+}
