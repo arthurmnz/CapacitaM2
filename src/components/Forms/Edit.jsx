@@ -1,15 +1,33 @@
-import "./Forms.css"
-import React, { useState } from "react";
-import { registerProduct } from "../services/mockapi.js";
+import "./Forms.css";
+import React, { useState, useEffect } from "react";
+import { updateProduct, getProductById } from "../../services/mockapi.js";
 
-function Cadastro() {
+function Editar() {
+  const id = 2;
   const [product, setProduct] = useState({
     Name: "",
     Price: "",
     Categories: "",
     Description: "",
     Storage: "",
+    ImgUrl: "",
   });
+
+  useEffect(() => {
+    async function fetchProduct() {
+      const data = await getProductById(id);
+      setProduct({
+        Name: data.Name || "",
+        Price: data.Price || "",
+        Categories: Array.isArray(data.Categories)
+          ? data.Categories.join(",")
+          : data.Categories || "",
+        Description: data.Description || "",
+        Storage: data.Storage || "",
+      });
+    }
+    fetchProduct();
+  }, [id]);
 
   const validateProduct = (product) => {
     if (
@@ -44,13 +62,15 @@ function Cadastro() {
       };
 
       try {
-        await registerProduct(productToSend);
+        await updateProduct(productToSend);
+        alert("Produto atualizado com sucesso!");
         console.log("Produto cadastrado com sucesso!");
       } catch {
+        alert("Erro ao cadastrar produto");
         console.log("Erro ao cadastrar produto");
       }
     } else {
-      console.log("Produto inválido, não foi possível cadastrar.");
+      console.log("Produto inválido, não foi possível editar.");
     }
   };
 
@@ -64,55 +84,66 @@ function Cadastro() {
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <label>Nome do Produto:</label><br />
+      <label>Nome do Produto:</label>
       <input
+        className="input-field"
         id="Name"
         type="text"
         value={product.Name}
         onChange={handleChange}
         placeholder="Digite o nome do produto..."
-      /> <br />
-
-      <label>Preço do Produto:</label><br />
+      />
+      <label>Preço do Produto:</label>
       <input
+        className="input-field"
         id="Price"
         type="number"
+        step="0.01"
         value={product.Price}
         onChange={handleChange}
         placeholder="Digite o Preço do produto..."
-      /> <br />
-
-      <label>Categorias do Produto:</label><br />
+      />
+      <label>Categorias do Produto:</label>
       <input
+        className="input-field"
         id="Categories"
         type="text"
         value={product.Categories}
         onChange={handleChange}
         placeholder="Digite as categorias do produto..."
-      /> <br />
-
-      <label>Descrição do Produto:</label><br />
+      />
+      <label>Descrição do Produto:</label>
       <input
+        className="input-field"
         id="Description"
         type="text"
         value={product.Description}
         onChange={handleChange}
         placeholder="Digite a descrição do produto..."
-      /> <br />
-
-      <label>Quantidade no estoque:</label><br />
+      />
+      <label>Quantidade no estoque:</label>
       <input
+        className="input-field"
         id="Storage"
         type="number"
         value={product.Storage}
         onChange={handleChange}
         placeholder="Digite a quantidade no estoque..."
-      /> <br />
-      <button onClick={handleSubmit} type="submit">
-        Cadastrar Produto
-      </button><br /><br />
+      />
+      <label>Url da imagem:</label>
+      <input
+        className="input-field"
+        id="ImgUrl"
+        type="text"
+        value={product.ImgUrl}
+        onChange={handleChange}
+        placeholder="Digite o nome do produto..."
+      />
+      <button className="submit-button" onClick={handleSubmit} type="submit">
+        Salvar mudança
+      </button>
     </form>
   );
 }
 
-export default Cadastro;
+export default Editar;
