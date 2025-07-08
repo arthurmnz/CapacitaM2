@@ -1,10 +1,7 @@
 import "./App.css";
-import Editar from "./components/Cadastro";
 
 function App() {
-  return <>
-    <Editar />
-  </>;
+  return <></>;
 }
 
 export default App;
