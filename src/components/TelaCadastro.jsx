@@ -1,11 +1,16 @@
 import React from "react";
+import Footer from "./Footer";
+import Cadastro from "./Cadastro";
 
 const TelaCadastro = () => {
     return(
 
-    <div>
-        <h2>Adicionar um produto</h2>
-    </div>
+    <>
+        
+        <Cadastro/>
+        <br />
+        
+    </>
 
     );
 }

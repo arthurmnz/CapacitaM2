@@ -8,12 +8,11 @@ import Typography from "@mui/material/Typography";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-import Login from "./components/Login";
-import TelaCadastro from "./pages/TelaCadastro";
-import TelaEdicao from "./pages/TelaEdicao";
-import NoPage from "./components/NoPage";
-// import { Login } from "@mui/icons-material";
+import TelaCadastro from "./components/TelaCadastro";
+import TelaEdicao from "./components/TelaEdicao";
+import { Login } from "@mui/icons-material";
 import "./components/Header.css";
+import NoPage from "./components/NoPage"
 
 function App() {
   return (
@@ -21,22 +20,21 @@ function App() {
       <BrowserRouter>
         <div>
           <nav className="Header">
-            <a href="/">Loja Periféricos</a>
-            <div className="Header-right">
-              <a href="/login">Login</a>
-              <a href="/TelaCadastro">Cadastro de produtos</a>
-              <a href="/TelaEdicao">Edição de produtos</a>
+            <a href="/">Neo Periféricos</a>
+            <div className='Header-right'>
+            <a href="/TelaCadastro">Cadastro de produtos</a>
+            <a href="/TelaEdicao">Edição de produtos</a>
             </div>
           </nav>
           <br />
           <br />
         </div>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/TelaCadastro" element={<TelaCadastro />} />
-          <Route path="/TelaEdicao" element={<TelaEdicao />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="/" element= { <Home/> } />
+          <Route path="/TelaCadastro" element= { <TelaCadastro/> } />
+          <Route path="/TelaEdicao" element= { <TelaEdicao/>  } />
+          <Route path="/TelaEdicao/:id" element= { <TelaEdicao/>  } />
+          <Route path='*' element={ <NoPage/> } />
         </Routes>
       </BrowserRouter>
     </>

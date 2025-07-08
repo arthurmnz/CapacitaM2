@@ -1,4 +1,4 @@
-const API_URL = "https://6862c40396f0cc4e34bae5ce.mockapi.io/api/Product";
+const API_URL = "https://6862c40396f0cc4e34bae5ce.mockapi.io/api/Products";
 
 //GET /Products
 //get all products
@@ -34,7 +34,7 @@ export async function getProductById(id) {
     Categories: product.Categories,
     Description: product.Description,
     Storage: product.Storage,
-    ImgUrl: product.ImgUrl,
+    ImgUrl: product.ImgUrl || "",
   };
 }
 

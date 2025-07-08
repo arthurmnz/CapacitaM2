@@ -9,8 +9,6 @@ const Footer = () => {
       <p> 98131-3774 </p>
     
       
-      
-      
       </footer>
     
     
