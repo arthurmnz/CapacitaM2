@@ -6,11 +6,19 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./App.css";
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
-    </>
+    <div>
+      <>
+      
+     
+
+      {/* Main content of the app */}
+      <Footer />
+      </>
+    </div>
   );
 }
 
