@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Footer from "./Footer";
-import ProductCard from "./ProductCard";
+import Footer from "../components/Footer.jsx";
+import ProductCard from "../components/ProductCard.jsx";
 import { getAllProducts } from "../services/mockapi.js";
 
 const Home = () => {
@@ -21,6 +21,7 @@ const Home = () => {
   return (
     <div>
       <h2>Produtos já cadastrados</h2>
+      <button onClick={console.log(products)}>clique aq</button>
       <div className="containerCard">{productCards}</div>
       <br />
       <br />
