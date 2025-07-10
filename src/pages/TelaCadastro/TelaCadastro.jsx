@@ -1,9 +1,10 @@
 import React from "react";
-import Cadastro from "../components/Forms/Cadastro.jsx";
+import "./TelaCadastro.css";
+import Cadastro from "../../components/Forms/Cadastro.jsx";
 
 const TelaCadastro = () => {
   return (
-    <div>
+    <div className="tela-cadastro">
       <Cadastro />
     </div>
   );

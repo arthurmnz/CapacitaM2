@@ -1,0 +1,18 @@
+.NoPage{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 350px;
+    height: 350px;
+}
+
+@media screen and (max-height: 700px) {
+    img{
+        width: 250px;
+        height: 250px;
+    }
+}

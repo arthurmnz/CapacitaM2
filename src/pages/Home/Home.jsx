@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../components/Footer.jsx";
-import ProductCard from "../components/ProductCard.jsx";
-import { getAllProducts } from "../services/mockapi.js";
+import ProductCard from "../../components/ProductCard.jsx";
+import { getAllProducts } from "../../services/mockapi.js";
+import "./Home.css";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -14,18 +14,20 @@ const Home = () => {
     fetchProducts();
   }, []);
 
+  if (!products || products.length === 0) {
+    return (
+      <div className="loader-container">
+        <h1>Nenhum Produto Cadastrado</h1>
+      </div>
+    );
+  }
   const productCards = products.map((product) => (
     <ProductCard key={product.id} {...product} />
   ));
 
   return (
-    <div>
-      <h2>Produtos já cadastrados</h2>
-      <button onClick={console.log(products)}>clique aq</button>
-      <div className="containerCard">{productCards}</div>
-      <br />
-      <br />
-      <Footer />
+    <div className="home">
+      <div className="container-card">{productCards}</div>
     </div>
   );
 };

@@ -3,33 +3,19 @@
   color: white;
   text-align: center;
   padding: 20px 0;
-  position:relative ;
-  left: 0;
-  bottom: 0px;
   width: 100%;
-  z-index: 2;
+  height: 10vh;
+  margin-top: auto;
 }
-
-.footer .container {
-max-width: 1200px;
-margin: 0 auto;
-}
-
 
 .footer p {
   margin: 5px 0;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 1rem;
 }
 
 @media (max-width: 768px) {
-  .footer {
-    padding: 15px 0;
-  }
-  .footer p{
+  .footer p {
     font-size: 0.9rem;
   }
-
-
-
 }

@@ -1,9 +1,10 @@
 import "./Forms.css";
+import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { updateProduct, getProductById } from "../../services/mockapi.js";
 
 function Editar() {
-  const id = 2;
+  const { id } = useParams();
   const [product, setProduct] = useState({
     Name: "",
     Price: "",
@@ -18,12 +19,13 @@ function Editar() {
       const data = await getProductById(id);
       setProduct({
         Name: data.Name || "",
-        Price: data.Price || "",
+        Price: data.Price !== undefined ? String(data.Price) : "",
         Categories: Array.isArray(data.Categories)
           ? data.Categories.join(",")
           : data.Categories || "",
         Description: data.Description || "",
-        Storage: data.Storage || "",
+        Storage: data.Storage !== undefined ? String(data.Storage) : "",
+        ImgUrl: data.ImgUrl || "",
       });
     }
     fetchProduct();
@@ -62,12 +64,12 @@ function Editar() {
       };
 
       try {
-        await updateProduct(productToSend);
+        await updateProduct(id, productToSend);
         alert("Produto atualizado com sucesso!");
         console.log("Produto cadastrado com sucesso!");
       } catch {
-        alert("Erro ao cadastrar produto");
-        console.log("Erro ao cadastrar produto");
+        alert("Erro ao editar produto");
+        console.log("Erro ao editar produto");
       }
     } else {
       console.log("Produto inválido, não foi possível editar.");
@@ -144,7 +146,7 @@ function Editar() {
         />
       </div>
       <button className="submit-button" onClick={handleSubmit} type="submit">
-        Cadastrar Produto
+        Salvar Alterações
       </button>
     </form>
   );
