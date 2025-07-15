@@ -11,9 +11,9 @@ const AppRoutes = () => (
   <Suspense fallback={<Loading />}>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/TelaCadastro" element={<TelaCadastro />} />
+      <Route path="/telacadastro" element={<TelaCadastro />} />
       <Route path="*" element={<NoPage />} />
-      <Route path="/TelaEdicao/:id" element={<TelaEdicao />} />
+      <Route path="/telaedicao/:id" element={<TelaEdicao />} />
     </Routes>
   </Suspense>
 );
