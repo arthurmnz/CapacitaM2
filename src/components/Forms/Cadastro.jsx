@@ -17,7 +17,8 @@ function Cadastro() {
       !product.Name ||
       !product.Price ||
       !product.Categories ||
-      !product.Description
+      !product.Description ||
+      !product.Storage
     ) {
       alert("Preencha os campos obrigatórios.");
       return false;
