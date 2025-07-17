@@ -66,7 +66,8 @@ function Editar() {
       try {
         await updateProduct(id, productToSend);
         alert("Produto atualizado com sucesso!");
-        console.log("Produto cadastrado com sucesso!");
+        console.log("Produto atualizado com sucesso!");
+        window.Location.href = "/";
       } catch {
         alert("Erro ao editar produto");
         console.log("Erro ao editar produto");

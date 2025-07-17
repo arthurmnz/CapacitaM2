@@ -49,6 +49,7 @@ function Cadastro() {
         await registerProduct(productToSend);
         alert("Produto cadastrado com sucesso!");
         console.log("Produto cadastrado com sucesso!");
+        window.location.href = "/";
       } catch {
         alert("Erro ao cadastrar produto");
         console.log("Erro ao cadastrar produto");
