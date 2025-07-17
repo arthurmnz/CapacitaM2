@@ -1,5 +1,5 @@
 import React from "react";
-// import { deleteProduct } from "../services/mockapi.js";
+import { deleteProduct } from "../services/mockapi.js";
 import {
   Card,
   CardMedia,
@@ -71,7 +71,20 @@ const ProductCard = ({
               >
                 <Edit />
               </IconButton>
-              <IconButton size="small" color="error">
+              <IconButton
+                size="small"
+                color="error"
+                onClick={async () => {
+                  try {
+                    await deleteProduct(id);
+                    alert("Produto deletado com sucesso!");
+                    window.location.reload();
+                  } catch (error) {
+                    alert("Erro ao deletar produto.");
+                    console.error("Erro ao deletar produto:", error);
+                  }
+                }}
+              >
                 <Delete />
               </IconButton>
             </Box>
